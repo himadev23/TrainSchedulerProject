@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>TranScheduler</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" type="text/css" href="reset.css"> -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" type="text/css" href="style.css"> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js">
+    < script src = "https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js" >
+    </script>
+    <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
+</head>
+
+<body>
+    <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        
+                        <li><button onclick = "googleSignin()">Google Signin</button></li>
+                        <li><button onclick = "googleSignout()">Google Signout</button></li>
+                        
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+            </div>
+            <!-- /.container-fluid -->
+        </nav>
+    <div class="container">
+        
+        <div class="row">
+            <div class="jumbotron">
+                <h1>Any time train time</h1>
+                <p>A Comprehensive Directory of Employee Billable Hours</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="panel panel-default">
+                <div class="panel-heading">Current Employees</div>
+                <!-- Table -->
+                <table class="table" id="current-Train">
+                    <thead>
+                        <tr>
+                            <th class="table-headers">Train Name</th>
+                            <th class="table-headers">Destination</th>
+                            <th class="table-headers">Frequency</th>
+                            <th class="table-headers">Next Arrival</th>
+                            <th class="table-headers">Time Away</th>
+                        </tr>
+                    </thead>
+                    <tbody class="table-body">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <!-- </div> -->
+        <div class="row">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Add Train</h3>
+                </div>
+                <div class="panel-body">
+                    <form id="formSubmit">
+                        <div class="form-group">
+                            <label for="Train-input">Train Name</label>
+                            <input type="text" class="form-control" id="Train-input" placeholder="Train Name">
+                        </div>
+                        <div class="form-group">
+                            <label for="destination-input">Destination</label>
+                            <input type="text" class="form-control" id="destination-input" placeholder="Destination">
+                        </div>
+                        <div class="form-group">
+                            <label for="Train-Time">Train Time</label>
+                            <input type="time" format="HH:mm" class="form-control" id="Train-Time" placeholder="" constant='moment.HTML5_FMT.TIME'>
+                            <!-- <input type="time" value=format('HH:mm')> -->
+                        </div>
+                        <div class="form-group">
+                            <input type="time" />
+                        </div>
+                        <div class="form-group">
+                            <label for="frequency-input">Frequency(min)</label>
+                            <input type="number" class="form-control" id="frequency-input" placeholder="Frequency">
+                        </div>
+                        <button type="submit" class="btn btn-default" id="submit-button">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript" src="moment.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</body>
+
+</html>
